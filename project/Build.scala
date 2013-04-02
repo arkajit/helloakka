@@ -1,12 +1,14 @@
 import sbt._
+import sbtassembly.Plugin._
 import sbt.Keys._
+import AssemblyKeys._
 
 object HelloakkaBuild extends Build {
 
   lazy val helloakka = Project(
     id = "helloakka",
     base = file("."),
-    settings = Project.defaultSettings ++ Seq(
+    settings = Project.defaultSettings ++ assemblySettings ++ Seq(
       name := "helloakka",
       organization := "org.arkajit",
       version := "0.1-SNAPSHOT",
